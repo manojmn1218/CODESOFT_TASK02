@@ -180,7 +180,7 @@ export default function ReservationPage() {
               type="tel"
               id="res-phone"
               name="phone"
-              placeholder="e.g. 9876543210"
+              placeholder="e.g. +91 98765 43210"
               value={form.phone}
               onChange={handleChange}
               className={`w-full px-3 py-2 rounded border text-sm ${

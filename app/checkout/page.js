@@ -195,12 +195,13 @@ export default function CheckoutPage() {
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium mb-1">
-                    Phone *
+                    Phone Number *
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
+                    placeholder="e.g. +91 98765 43210"
                     value={form.phone}
                     onChange={handleChange}
                     className={`w-full px-3 py-2 rounded border text-sm ${
@@ -256,6 +257,7 @@ export default function CheckoutPage() {
                   rows={2}
                   value={form.address}
                   onChange={handleChange}
+                  placeholder="e.g. #45, 2nd Cross, 5th Main, Indiranagar, Bengaluru - 560038"
                   className={`w-full px-3 py-2 rounded border text-sm ${
                     errors.address ? "border-error" : "border-border"
                   } focus:outline-none focus:border-brown resize-none`}

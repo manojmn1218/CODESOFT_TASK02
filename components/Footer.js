@@ -54,10 +54,10 @@ export default function Footer() {
               Visit Us
             </h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>123 Main Street, Downtown</li>
-              <li>Open daily: 11 AM – 10 PM</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>hello@dinedesk.com</li>
+              <li>📍 42, 100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038</li>
+              <li>⏰ Open daily: 11:00 AM – 11:00 PM</li>
+              <li>📞 Phone: +91 98765 43210 / (080) 4123 4567</li>
+              <li>✉️ hello@dinedesk.in</li>
             </ul>
           </div>
         </div>
