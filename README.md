@@ -80,11 +80,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
-## Test Accounts
-
-| Role  | Username | Password       |
-|-------|----------|----------------|
-| Staff | admin    | dinedesk2024   |
 
 Staff dashboard: [http://localhost:3000/staff](http://localhost:3000/staff)
 
