@@ -45,25 +45,71 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
-          <div className="max-w-2xl">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-text leading-tight">
-              Good food,
-              <br />
-              <span className="text-brown">simply served.</span>
-            </h1>
-            <p className="mt-4 text-text-muted text-lg leading-relaxed max-w-lg">
-              We keep things simple — fresh ingredients, honest cooking, and a
-              warm welcome every time. No fuss, just really good food.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/menu" className="btn-primary inline-block">
-                View Our Menu
-              </Link>
-              <Link href="/reservation" className="btn-secondary inline-block">
-                Reserve a Table
-              </Link>
+      <section className="bg-white border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left text column */}
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-brown/10 text-brown mb-4">
+                ✨ Authentic Dining & Fresh Flavors
+              </span>
+              <h1 className="font-heading text-4xl sm:text-5xl font-bold text-text leading-tight">
+                Good food,
+                <br />
+                <span className="text-brown">simply served.</span>
+              </h1>
+              <p className="mt-4 text-text-muted text-base sm:text-lg leading-relaxed max-w-xl">
+                We keep things simple — fresh ingredients, honest cooking, and a
+                warm welcome every time. No fuss, just really good food crafted with care.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/menu" className="btn-primary inline-block">
+                  View Our Menu
+                </Link>
+                <Link href="/reservation" className="btn-secondary inline-block">
+                  Reserve a Table
+                </Link>
+              </div>
+
+              {/* Highlights */}
+              <div className="mt-8 pt-6 border-t border-border grid grid-cols-3 gap-4 text-center sm:text-left">
+                <div>
+                  <p className="font-heading font-bold text-lg text-brown">4.9 ★</p>
+                  <p className="text-xs text-text-muted mt-0.5">500+ Reviews</p>
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-lg text-brown">100%</p>
+                  <p className="text-xs text-text-muted mt-0.5">Fresh Ingredients</p>
+                </div>
+                <div>
+                  <p className="font-heading font-bold text-lg text-brown">30 Mins</p>
+                  <p className="text-xs text-text-muted mt-0.5">Fast Prep</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right image column */}
+            <div className="lg:col-span-5">
+              <div className="relative h-72 sm:h-96 w-full rounded-2xl overflow-hidden shadow-lg border border-border">
+                <Image
+                  src="/images/restaurant-hero.jpg"
+                  alt="DineDesk cozy restaurant interior"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3 text-white p-3 rounded-lg backdrop-blur-xs bg-black/30 text-xs flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-white">DineDesk Main Dining</p>
+                    <p className="text-white/80 text-[11px]">Open daily 11 AM – 10 PM</p>
+                  </div>
+                  <span className="bg-success text-white px-2 py-0.5 rounded-full text-[10px] font-medium">
+                    Open Now
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
