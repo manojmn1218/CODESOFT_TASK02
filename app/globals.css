@@ -84,3 +84,15 @@ html {
   background-color: var(--color-brown);
   color: white;
 }
+
+/* Hide Next.js dev indicator badge in bottom corner */
+nextjs-portal,
+[data-nextjs-dev-tools-button],
+[data-nextjs-toast],
+#nextjs-dev-indicator,
+#__next-build-watcher {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
