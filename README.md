@@ -81,7 +81,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000)
 
 
-Staff dashboard: [http://localhost:3000/staff](http://localhost:3000/staff)
+Staff dashboard: [http://localhost:3000/staff/login](http://localhost:3000/staff/login)
 
 ## Pages
 
