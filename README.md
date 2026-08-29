@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🍽️ DineDesk
+
+**Good food, simply served.**
+
+A full-stack restaurant ordering and table reservation platform built with Next.js, PostgreSQL, and Prisma.
+
+> Built as a student portfolio project for CODSOFT internship.
+
+---
+
+## Features
+
+- **Menu browsing** — View dishes by category with images and descriptions
+- **Cart system** — Add/remove items, adjust quantities, persistent cart
+- **Online ordering** — Checkout with delivery or pickup options
+- **Order tracking** — Track order status with a progress indicator
+- **Table reservations** — Book a table with date, time, and guest count
+- **Staff dashboard** — View and manage orders, update statuses, see reservations
+
+## Tech Stack
+
+| Layer    | Technology                    |
+|----------|-------------------------------|
+| Frontend | Next.js 16, React 19, Tailwind CSS 4 |
+| Backend  | Next.js API Routes            |
+| Database | PostgreSQL, Prisma ORM        |
+| Auth     | bcrypt + HTTP-only cookies    |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- PostgreSQL (installed and running)
+
+### 1. Clone and Install
+
+```bash
+git clone <your-repo-url>
+cd codesoft_task2
+npm install
+```
+
+### 2. Set Up the Database
+
+Create a PostgreSQL database:
+
+```sql
+CREATE DATABASE dinedesk;
+```
+
+Copy the environment file and update your database URL:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` with your PostgreSQL credentials:
+
+```
+DATABASE_URL="postgresql://postgres:your_password@localhost:5432/dinedesk"
+```
+
+### 3. Run Migrations and Seed
+
+```bash
+npx prisma db push
+npm run seed
+```
+
+This creates all tables and seeds the database with:
+- 16 menu items
+- 1 staff account
+
+### 4. Start the Dev Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Test Accounts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Role  | Username | Password       |
+|-------|----------|----------------|
+| Staff | admin    | dinedesk2024   |
 
-## Learn More
+Staff dashboard: [http://localhost:3000/staff](http://localhost:3000/staff)
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Page             | URL            | Description                    |
+|------------------|----------------|--------------------------------|
+| Home             | `/`            | Landing page with popular dishes |
+| Menu             | `/menu`        | Full menu with category filter |
+| Cart             | `/cart`        | Shopping cart                  |
+| Checkout         | `/checkout`    | Order form + simulated payment |
+| Reservations     | `/reservation` | Table booking form             |
+| Track Order      | `/orders`      | Order status tracking          |
+| Staff Login      | `/staff/login` | Staff authentication           |
+| Staff Dashboard  | `/staff`       | Order & reservation management |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## API Endpoints
 
-## Deploy on Vercel
+| Method | Endpoint             | Description              |
+|--------|----------------------|--------------------------|
+| GET    | `/api/menu`          | Get all menu items       |
+| POST   | `/api/orders`        | Create a new order       |
+| GET    | `/api/orders`        | Get all orders (staff)   |
+| GET    | `/api/orders/:id`    | Get order by ID          |
+| PATCH  | `/api/orders/:id`    | Update order status      |
+| POST   | `/api/reservations`  | Create a reservation     |
+| GET    | `/api/reservations`  | Get all reservations     |
+| POST   | `/api/auth/login`    | Staff login              |
+| POST   | `/api/auth/logout`   | Staff logout             |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+├── app/
+│   ├── page.js              # Home
+│   ├── menu/page.js         # Menu
+│   ├── cart/page.js          # Cart
+│   ├── checkout/page.js      # Checkout
+│   ├── reservation/page.js   # Table reservation
+│   ├── orders/page.js        # Order tracking
+│   ├── staff/
+│   │   ├── page.js           # Dashboard
+│   │   └── login/page.js     # Staff login
+│   └── api/                  # API routes
+├── components/               # Reusable UI components
+├── context/                  # React Context (cart state)
+├── lib/                      # Utilities (Prisma client, menu data)
+├── prisma/                   # Schema + seed
+└── public/images/            # Food images
+```
+
+## Environment Variables
+
+| Variable      | Description                  |
+|---------------|------------------------------|
+| DATABASE_URL  | PostgreSQL connection string |
+| STAFF_SECRET  | Session encryption secret    |
+
+---
+
+Built by Manoj | CODSOFT Internship
